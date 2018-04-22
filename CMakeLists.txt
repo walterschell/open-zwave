@@ -107,7 +107,7 @@ add_library(openzwave-static STATIC ${OPENZWAVE_SRCS})
 
 target_include_directories(openzwave PUBLIC ${OPENZWAVE_INCLUDE_DIRS})
 target_include_directories(openzwave-static PUBLIC ${OPENZWAVE_INCLUDE_DIRS})
-
+set_target_properties(openzwave-static PROPERTIES OUTPUT_NAME openzwave)
 
 set(minozw_SRCS cpp/examples/MinOZW/Main.cpp)
 add_executable(minozw ${minozw_SRCS})
