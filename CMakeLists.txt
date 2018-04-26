@@ -116,3 +116,11 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
     target_link_libraries(minozw udev pthread)
     target_compile_options(minozw PRIVATE -pthread)
 endif()
+
+set(CPACK_GENERATOR "TGZ")
+include(CPack)
+
+install(TARGETS openzwave openzwave-static minozw
+        LIBRARY DESTINATION usr/local/lib
+        ARCHIVE DESTINATION usr/local/lib
+        RUNTIME DESTINATION usr/local/bin)
